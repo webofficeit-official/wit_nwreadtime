@@ -1,0 +1,7 @@
+plugin.tx_news {
+   view {
+      templateRootPath = EXT:wit_nwreadtime/Resources/Private/Templates/
+      partialRootPath = EXT:wit_nwreadtime/Resources/Private/Partials/
+      layoutRootPath = EXT:wit_nwreadtime/Resources/Private/Layouts/
+   }
+}

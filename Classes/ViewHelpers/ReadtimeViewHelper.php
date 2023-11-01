@@ -20,6 +20,7 @@ final class ReadtimeViewHelper extends AbstractViewHelper {
     public function initializeArguments()
     {
         $this->registerArgument('newsId', 'int', 'News id for check read time', true);
+        $this->registerArgument('format', 'boolean', 'Type of return value as 00:00:00', false);
     }
 
     public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
@@ -37,7 +38,14 @@ final class ReadtimeViewHelper extends AbstractViewHelper {
         $word = str_word_count(strip_tags($data['bodytext']));
         $minutes = floor($word / 200);
         $seconds = floor($word % 200 / (200 / 60));
-        $time = $minutes . ' minute' . ($minutes == 1 ? '' : 's') . ', ' . $seconds . ' second' . ($seconds == 1 ? '' : 's');
+        $hours = floor($minutes / 60);
+        $minutes %= 60;
+
+        $time = ($hours == 00 ? '' : $hours . ' hour' . ($hours == 1 ? '' : 's') . ', ') . ($minutes == 00 ? '' : $minutes . ' minute' . ($minutes == 1 ? '' : 's') . ', ') . ($seconds == 00 ? '' : $seconds . ' second' . ($seconds == 1 ? '' : 's'));
+
+        if($arguments['format']) {
+            $time = sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
+        }
 
         return $time;
     }

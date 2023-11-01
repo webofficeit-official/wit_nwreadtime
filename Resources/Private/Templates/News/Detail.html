@@ -104,7 +104,7 @@
 
 				<!-- main text -->
 				<div class="news-text-wrap" itemprop="articleBody">
-					<b>Estimated reading time: <time:readtime newsId="{newsItem.uid}" format="true" /></b>
+					<b><f:translate key="LLL:EXT:wit_nwreadtime/Resources/Private/Language/locallang.xlf:nwreadtime.title" />: <time:readtime newsId="{newsItem.uid}" format="true" /></b>
 					<f:format.html>{newsItem.bodytext}</f:format.html>
 				</div>
 			</n:renderMedia>
@@ -156,7 +156,7 @@
 									</n:link>
 
 									<div>
-										<b>Estimated reading time: <time:readtime newsId="{related.uid}" /></b>
+										<b><f:translate key="LLL:EXT:wit_nwreadtime/Resources/Private/Language/locallang.xlf:nwreadtime.title" />: <time:readtime newsId="{related.uid}" /></b>
 									</div>
 								</li>
 

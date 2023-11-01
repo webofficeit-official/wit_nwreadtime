@@ -1,45 +1,37 @@
 {
     "name": "wit/wit-nwreadtime",
     "type": "typo3-cms-extension",
-    "description": "Wit news extension article readable time counter",
+    "description": "This extension is useful for displaying read time in  news detail view.",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "news",
+        "wit",
+        "nwreadtime"
+    ],
+    "homepage": "https://extensions.typo3.org/extension/wit_nwreadtime",
     "authors": [
         {
-            "name": "Rahul R S",
+            "name": "Team WebofficeIT, Rahul R S",
+            "email": "info@webofficeit.com",
             "role": "Developer"
         }
     ],
+    "support": {
+       "source": "https://github.com/webofficeit-official/wit_nwreadtime"
+    },
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": "^11.5"
-    },
-    "require-dev": {
-        "typo3/testing-framework": "^6.9.0"
+        "typo3/cms-core": "^10.4 || ^11",
+        "georgringer/news": "^9.4 || ^10 || ^11"
     },
     "autoload": {
         "psr-4": {
             "Wit\\WitNwreadtime\\": "Classes"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Wit\\WitNwreadtime\\Tests\\": "Tests"
-        }
-    },
-    "replace": {
-        "typo3-ter/wit-nwreadtime": "self.version"
-    },
-    "config": {
-        "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin"
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-        ]
-    },
     "extra": {
         "typo3/cms": {
-            "web-dir": ".Build/Web",
             "extension-key": "wit_nwreadtime"
         }
     }

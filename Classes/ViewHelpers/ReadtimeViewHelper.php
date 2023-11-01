@@ -41,10 +41,19 @@ final class ReadtimeViewHelper extends AbstractViewHelper {
         $hours = floor($minutes / 60);
         $minutes %= 60;
 
+
         $time = ($hours == 00 ? '' : $hours . ' hour' . ($hours == 1 ? '' : 's') . ', ') . ($minutes == 00 ? '' : $minutes . ' minute' . ($minutes == 1 ? '' : 's') . ', ') . ($seconds == 00 ? '' : $seconds . ' second' . ($seconds == 1 ? '' : 's'));
 
         if($arguments['format']) {
-            $time = sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
+            if($minutes == 00 && $hours == 00) {
+                $time = sprintf('%02d', $seconds) . ' seconds';
+            }
+            else if($hours == 00) {
+                $time = sprintf('%02d:%02d', $minutes, $seconds) . ' minutes' ;
+            } 
+            else {
+                $time = sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds) . ' hours';
+            }
         }
 
         return $time;

@@ -10,11 +10,23 @@ the extension in the Extension Manager of your TYPO3 installation.
 
 ## Adding to your own sitepackage
 
-In your news template, add the following code:
+Add namespace in your code
 
 ```html
     {namespace time=Wit\WitNwreadtime\ViewHelpers}
+```
 
+or
+
+```html
+    <html xmlns:time="http://typo3.org/ns/Wit/WitNwreadtime/ViewHelpers" data-namespace-typo3-fluid="true">
+```
+
+You can use either one of them to add namespace in your template
+
+In your news template, add the following code:
+
+```html
     <time:readtime newsId="{CURRENT_NEWS_ID}"  />
 ```
 

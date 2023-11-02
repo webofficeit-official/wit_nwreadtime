@@ -5,8 +5,7 @@ enhancing the user experience for your readers.
 
 ## Installation
 
-Install this extension via `composer req wit/wit-nwreadtime` and activate
-the extension in the Extension Manager of your TYPO3 installation.
+inorder to give composer support we are moving this extension to https://packagist.org/packages/woit/woit-nsreadtime.
 
 ## Adding to your own sitepackage
 
